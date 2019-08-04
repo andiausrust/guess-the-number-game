@@ -1,22 +1,18 @@
 package com.andi;
 
-import com.andi.config.GameConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {
         log.info("guess the number game");
 
-        // == create context (container) ==
-        ConfigurableApplicationContext context =
-                new AnnotationConfigApplicationContext(GameConfig.class);
+        SpringApplication.run(Main.class, args);
 
-        // == close context (container) ==
-        context.close();
     }
 
 }
